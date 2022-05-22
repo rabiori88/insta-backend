@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "nodemon --exec babel-node server"
+    "dev": "nodemon --exec babel-node server",
+    "migrate": "npx prisma migrate dev",
+    "studio": "npx prisma studio"
   },
   "repository": {
     "type": "git",
@@ -17,14 +19,20 @@
   },
   "homepage": "https://github.com/rabiori88/insta-backend#readme",
   "dependencies": {
+    "@graphql-tools/load-files": "^6.5.3",
+    "@graphql-tools/merge": "^8.2.13",
+    "@graphql-tools/schema": "^8.3.13",
+    "@prisma/client": "^3.14.0",
     "apollo-server": "^2.25.2",
+    "dotenv": "^16.0.1",
+    "graphql-tools": "^8.2.11",
     "nodemon": "^2.0.16"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.17.10",
     "@babel/node": "^7.17.10",
-    "@babel/preset-env": "^7.17.10"
-  },
-  "type": "module"
+    "@babel/preset-env": "^7.17.10",
+    "prisma": "^3.14.0"
+  }
 }
