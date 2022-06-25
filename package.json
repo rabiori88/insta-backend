@@ -27,6 +27,7 @@
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
     "graphql-tools": "^8.2.11",
+    "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.16"
   },
   "devDependencies": {

@@ -1,6 +1,5 @@
-import client from "../client";
+import client from "../../client";
 import bcrypt from "bcrypt";
-import cli from "nodemon/lib/cli";
 
 export default {
   Mutation: {
@@ -23,11 +22,11 @@ export default {
         });
 
         if (existingUser) {
-          throw new Error("This username/password is a already teken");
+          throw new Error("This username/password is a already taken");
         }
         const uglyPassword = await bcrypt.hash(password, 10);
-        console.log(uglyPassword);
-        const user = client.user.create({
+
+        return client.user.create({
           data: {
             userName,
             email,
