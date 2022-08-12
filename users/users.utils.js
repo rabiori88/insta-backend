@@ -17,3 +17,24 @@ export const getUser = async (token) => {
     return null;
   }
 };
+
+export const protectResolver = (user) => {
+  if (!user) {
+    return {
+      ok: false,
+      error: "먼저 로그인 부터 하세요.",
+    };
+  }
+};
+
+export const protectedResolver =
+  (ourResolver) => (root, args, context, info) => {
+    if (!context.loggedInUser) {
+      return {
+        ok: false,
+        error: "제발 먼저 로그인 부터 하세요",
+      };
+    }
+
+    return ourResolver(root, args, context, info);
+  };
