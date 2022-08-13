@@ -1,5 +1,5 @@
 {
-  "name": "instagram_clone",
+  "name": "instaclone",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -9,48 +9,38 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rabiori88/insta-backend.git"
+    "url": "git+https://github.com/FIN443/instaclone-backend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rabiori88/insta-backend/issues"
+    "url": "https://github.com/FIN443/instaclone-backend/issues"
   },
-  "homepage": "https://github.com/rabiori88/insta-backend#readme",
+  "homepage": "https://github.com/FIN443/instaclone-backend#readme",
   "dependencies": {
-    "@graphql-tools/load-files": "^6.5.3",
-    "@graphql-tools/merge": "^8.2.13",
-    "@graphql-tools/schema": "^8.3.13",
-    "@prisma/client": "^3.14.0",
-    "apollo-server": "^3.10.1",
-    "apollo-server-express": "^3.10.1",
+    "@graphql-tools/load-files": "^6.5.4",
+    "@graphql-tools/merge": "^8.2.15",
+    "@graphql-tools/schema": "^8.4.0",
+    "@prisma/client": "^3.15.2",
+    "apollo-server": "^3.9.0",
+    "apollo-server-express": "^3.9.0",
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "graphql": "^16.5.0",
-    "graphql-tools": "^8.3.3",
-    "graphql-upload": "^16.0.1",
-    "jsonwebtoken": "^8.5.1",
-    "nodemon": "^2.0.16",
-    "update": "^0.4.2"
+    "graphql-tools": "^8.2.13",
+    "graphql-upload": "^15.0.1",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.17.10",
-    "@babel/node": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
-    "@types/jsonwebtoken": "^8.5.8",
-    "prisma": "^3.14.0",
-    "ts-node": "^10.9.1",
+    "@babel/core": "^7.18.5",
+    "@babel/node": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@types/node": "^18.0.0",
+    "nodemon": "^2.0.16",
+    "prisma": "^3.15.2",
+    "ts-node": "^10.8.1",
     "typescript": "^4.7.4"
-  },
-  "exports": {
-    "./GraphQLUpload.js": "./GraphQLUpload.js",
-    "./graphqlUploadExpress.js": "./graphqlUploadExpress.js",
-    "./graphqlUploadKoa.js": "./graphqlUploadKoa.js",
-    "./package.json": "./package.json",
-    "./processRequest.js": "./processRequest.js",
-    "./Upload.js": "./Upload.js"
   }
 }

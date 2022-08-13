@@ -8,9 +8,18 @@ export default {
     editProfile: protectedResolver(
       async (
         _,
-        { firstName, lastName, userName, email, password: newPassword, bio },
+        {
+          firstName,
+          lastName,
+          userName,
+          email,
+          password: newPassword,
+          bio,
+          avatar,
+        },
         { loggedInUser, protectResolver }
       ) => {
+        console.log(avatar);
         let uglyPassword = null;
 
         if (newPassword) {
