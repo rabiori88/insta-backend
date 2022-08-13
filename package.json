@@ -23,12 +23,17 @@
     "@graphql-tools/merge": "^8.2.13",
     "@graphql-tools/schema": "^8.3.13",
     "@prisma/client": "^3.14.0",
-    "apollo-server": "^2.25.2",
+    "apollo-server": "^3.10.1",
+    "apollo-server-express": "^3.10.1",
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
-    "graphql-tools": "^8.2.11",
+    "express": "^4.18.1",
+    "graphql": "^16.5.0",
+    "graphql-tools": "^8.3.3",
+    "graphql-upload": "^16.0.1",
     "jsonwebtoken": "^8.5.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "update": "^0.4.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -39,5 +44,13 @@
     "prisma": "^3.14.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
+  },
+  "exports": {
+    "./GraphQLUpload.js": "./GraphQLUpload.js",
+    "./graphqlUploadExpress.js": "./graphqlUploadExpress.js",
+    "./graphqlUploadKoa.js": "./graphqlUploadKoa.js",
+    "./package.json": "./package.json",
+    "./processRequest.js": "./processRequest.js",
+    "./Upload.js": "./Upload.js"
   }
 }

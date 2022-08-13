@@ -1,13 +1,14 @@
 import client from "../../client";
 import bcrypt from "bcrypt";
 import { protectedResolver } from "../users.utils";
-
+import GraphQLUpload from "graphql-upload/GraphQLUpload.js";
 export default {
+  Upload: GraphQLUpload,
   Mutation: {
     editProfile: protectedResolver(
       async (
         _,
-        { firstName, lastName, userName, email, password: newPassword },
+        { firstName, lastName, userName, email, password: newPassword, bio },
         { loggedInUser, protectResolver }
       ) => {
         let uglyPassword = null;
@@ -22,6 +23,7 @@ export default {
             lastName,
             userName,
             email,
+            bio,
             ...(uglyPassword && { password: uglyPassword }),
           },
         });
