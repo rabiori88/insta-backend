@@ -1,5 +1,6 @@
-import client from "../../client";
 import bcrypt from "bcrypt";
+import GraphQLUpload from "graphql-upload/GraphQLUpload.js";
+import client from "../../client";
 import { protectedResolver } from "../users.utils";
 
 export default {
