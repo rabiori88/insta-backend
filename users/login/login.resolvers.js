@@ -16,7 +16,6 @@ export default {
 
       // check password with args.password
       const passwordOk = await bcrypt.compare(password, user.password);
-
       if (!passwordOk) {
         return {
           ok: false,
@@ -24,10 +23,7 @@ export default {
         };
       }
 
-      const token = await jwt.sign(
-        { id: user.id, Tomato: "patoasoo" },
-        process.env.SECRET_KEY
-      );
+      const token = await jwt.sign({ id: user.id }, process.env.SECRET_KEY);
       return {
         ok: true,
         token,

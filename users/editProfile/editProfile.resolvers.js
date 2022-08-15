@@ -21,16 +21,19 @@ export default {
         },
         { loggedInUser }
       ) => {
-        const { filename, createReadStream } = await avatar;
-        const readStream = createReadStream();
-        const writeStream = createWriteStream(
-          process.cwd() + "/uploads/" + filename
-        );
-        readStream.pipe(writeStream);
+        let avatarUrl = null;
+        if (avatar) {
+          const { filename, createReadStream } = await avatar;
+          const newFileName = `${loggedInUser.id}-${Date.now()}-${filename}`;
+          console.log(newFileName);
+          const readStream = createReadStream();
+          const writeStream = createWriteStream(
+            process.cwd() + "/uploads/" + newFileName
+          );
+          readStream.pipe(writeStream);
+          avatarUrl = `http://localhost:4001/static/${newFileName}`;
+        }
 
-        console.log(readStream);
-
-        console.log(filename, createReadStream);
         let uglyPassword = null;
 
         if (newPassword) {
@@ -43,7 +46,9 @@ export default {
             lastName,
             userName,
             email,
+            bio,
             ...(uglyPassword && { password: uglyPassword }),
+            ...(avatarUrl && { avatar: avatarUrl }),
           },
         });
 
