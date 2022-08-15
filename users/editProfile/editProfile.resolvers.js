@@ -1,3 +1,4 @@
+import { createWriteStream } from "fs";
 import bcrypt from "bcrypt";
 import GraphQLUpload from "graphql-upload/GraphQLUpload.js";
 import client from "../../client";
@@ -9,9 +10,27 @@ export default {
     editProfile: protectedResolver(
       async (
         _,
-        { firstName, lastName, userName, email, password: newPassword },
-        { loggedInUser, protectResolver }
+        {
+          firstName,
+          lastName,
+          userName,
+          email,
+          password: newPassword,
+          bio,
+          avatar,
+        },
+        { loggedInUser }
       ) => {
+        const { filename, createReadStream } = await avatar;
+        const readStream = createReadStream();
+        const writeStream = createWriteStream(
+          process.cwd() + "/uploads/" + filename
+        );
+        readStream.pipe(writeStream);
+
+        console.log(readStream);
+
+        console.log(filename, createReadStream);
         let uglyPassword = null;
 
         if (newPassword) {
