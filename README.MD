@@ -8,6 +8,6 @@ Instaclone Backend.
 - [x] See Profile
 - [x] Login
 - [x] Edit Profile
-- [ ] Follow User
+- [] Follow User
 - [ ] Unfollow User
 - [ ] Change Avatar (Image Upload)

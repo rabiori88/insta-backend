@@ -6,6 +6,7 @@ export const getUser = async (token) => {
     if (!token) {
       return null;
     }
+
     const { id } = await jwt.verify(token, process.env.SECRET_KEY);
     const user = await client.user.findUnique({ where: { id } });
     if (user) {
@@ -17,15 +18,6 @@ export const getUser = async (token) => {
     return null;
   }
 };
-
-// export const protectResolver = (user) => {
-//   if (!user) {
-//     return {
-//       ok: false,
-//       error: "먼저 로그인 부터 하세요.",
-//     };
-//   }
-// };
 
 export const protectedResolver =
   (ourResolver) => (root, args, context, info) => {
