@@ -10,4 +10,10 @@ Instaclone Backend.
 - [x] Edit Profile
 - [x] Follow User
 - [x] Unfollow User
-- [ ] Change Avatar (Image Upload)
+- [x] Change Avatar (Image Upload)
+
+## Photos
+
+##Comments
+
+- [x] Comment on Photo
