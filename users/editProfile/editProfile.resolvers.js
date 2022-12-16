@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import GraphQLUpload from "graphql-upload/GraphQLUpload.js";
 import client from "../../client";
 import { protectedResolver } from "../users.utils";
+import { uploadToS3 } from "../../shared/shared.utils";
 
 export default {
   Upload: GraphQLUpload,
@@ -23,15 +24,15 @@ export default {
       ) => {
         let avatarUrl = null;
         if (avatar) {
-          const { filename, createReadStream } = await avatar;
-          const newFileName = `${loggedInUser.id}-${Date.now()}-${filename}`;
-          console.log(newFileName);
-          const readStream = createReadStream();
-          const writeStream = createWriteStream(
-            process.cwd() + "/uploads/" + newFileName
-          );
-          readStream.pipe(writeStream);
-          avatarUrl = `http://localhost:4001/static/${newFileName}`;
+          avatarUrl = await uploadToS3(avatar, loggedInUser.id, "avatars");
+          // const { filename, createReadStream } = await avatar;
+          // const newFileName = `${loggedInUser.id}-${Date.now()}-${filename}`;
+          // const readStream = createReadStream();
+          // const writeStream = createWriteStream(
+          //   process.cwd() + "/uploads/" + newFileName
+          // );
+          // readStream.pipe(writeStream);
+          // avatarUrl = `http://localhost:4001/static/${newFileName}`;
         }
 
         let uglyPassword = null;
