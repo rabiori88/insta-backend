@@ -20,7 +20,7 @@ Instaclone Backend.
 
 ## Dms
 
-- [] Create Room
+- [x] See Room
+- [] Send Message (Create Room)
 - [] Get Room
-- [] Send Message
 - [] Realtime Message
