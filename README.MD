@@ -17,3 +17,10 @@ Instaclone Backend.
 ##Comments
 
 - [x] Comment on Photo
+
+## Dms
+
+- [x] Create Room
+- [x] Get Room
+- [x] Send Message
+- [x] Realtime Message
