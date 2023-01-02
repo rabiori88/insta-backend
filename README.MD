@@ -23,6 +23,6 @@ Instaclone Backend.
 - [x] See Room
 - [x] Send Message (Create Room)
 - [x] See Room
-- [] Computed Fileds
-- [] See Message
+- [x] Computed Fileds
+- [x] See (Read) Message
 - [] Realtime Message
