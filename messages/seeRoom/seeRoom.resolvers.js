@@ -3,7 +3,7 @@ import { protectedResolver } from "../../users/users.utils";
 
 export default {
   Query: {
-    seeRoom: protectedResolver((_, { id }, { loggedInUser }) => {
+    seeRoom: protectedResolver((_, { id }, { loggedInUser }) =>
       client.room.findFirst({
         where: {
           id,
@@ -13,7 +13,7 @@ export default {
             },
           },
         },
-      });
-    }),
+      })
+    ),
   },
 };

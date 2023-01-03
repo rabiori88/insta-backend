@@ -1,6 +1,5 @@
 import client from "../../client";
 import { protectedResolver } from "../../users/users.utils";
-
 export default {
   Mutation: {
     sendMessage: protectedResolver(
@@ -18,7 +17,7 @@ export default {
           if (!user) {
             return {
               ok: false,
-              error: "This user dose not exist.",
+              error: "This user does not exist.",
             };
           }
           room = await client.room.create({
@@ -29,7 +28,7 @@ export default {
                     id: userId,
                   },
                   {
-                    id: loggedInUser,
+                    id: loggedInUser.id,
                   },
                 ],
               },
@@ -47,11 +46,12 @@ export default {
           if (!room) {
             return {
               ok: false,
-              error: "Room not found",
+              error: "Room not found.",
             };
           }
-        }
 
+          console.log(room);
+        }
         await client.message.create({
           data: {
             payload,
